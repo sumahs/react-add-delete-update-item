@@ -7,9 +7,9 @@ export default class ItemList extends Component{
         return(
             <ul className="list-group my-5">
                 <h3 className="text-capitalize text-center">Item List</h3>
-                {items.map(item =>{
+                {items.map((item, id) =>{
                     return(
-                        <Items key={item.id}
+                        <Items key={id}
                             title={item.title}
                             handleDelete={()=>handleDelete(item.id)}
                             handleEdit={()=>{handleEdit(item.id)}}

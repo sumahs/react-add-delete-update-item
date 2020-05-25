@@ -31,16 +31,21 @@ class App extends Component{
       item: '',
       id: uuidv4,
       editItem: false
-    },
-    ()=>console.log(this.state)
+    }
     );
   };
 
   clearList =() =>{
-    console.log("clearList");
+    this.setState({
+      items:[]
+    })
   }
-  handleDelete =(id) =>{
-    console.log(`handle delete ${id}` );
+  handleDelete =id =>{
+    const filtedItems = this.state.items.filter(
+        item=> item.id !== id);
+    this.setState({
+      items:filtedItems
+    })
   }
   handleEdit =(id) =>{
     console.log(`handle edit ${id}`);
