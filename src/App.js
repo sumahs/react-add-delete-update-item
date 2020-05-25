@@ -3,7 +3,7 @@ import uuid from 'uuid';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import ItemList from './component/ItemList';
 import ItemInput from './component/ItemInput';
-
+//gitup setup
 class App extends Component{
     render(){
       return (
