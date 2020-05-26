@@ -21,9 +21,9 @@ export default class ItemInput extends Component{
                     <button type="submit" 
                         disabled={item ? false :true}
                         className={editItem
-                            ?"btn btn-block btn-success mt-3"
+                            ? "btn btn-block btn-success mt-3"
                             :"btn btn-block btn-primary mt-3"}>
-                        {editItem ?"Edit Item":"Add Item"}
+                        {editItem ? "Edit Item" :"Add Item"}
                     </button>
                 </form>
             </div>

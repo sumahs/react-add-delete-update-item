@@ -54,9 +54,9 @@ class App extends Component{
       item=> item.id === id);
     this.setState({
       items: filtedItem,
-      item: selectedItem[0].title, //{title:selectedItem.title||''}, //selectedItem.title||'',
+      item: selectedItem[0].title, 
       id:id,
-      editItem:true
+      editItem: true,
     })
   }
     render(){
@@ -70,7 +70,7 @@ class App extends Component{
               <ItemInput item={this.state.item ||''}
                 handleChange={this.handleChange}
                 handleSubmit={this.handleSubmit}
-                editItem={this.editItem}/>
+                editItem={this.state.editItem}/>
               <ItemList items={this.state.items}
                 handleDelete={this.handleDelete}
                 handleEdit={this.handleEdit}
