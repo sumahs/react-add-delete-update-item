@@ -29,7 +29,7 @@ class App extends Component{
     this.setState({
       items:updatedItems,
       item: '',
-      id: uuidv4,
+      id: uuidv4(),
       editItem: false
     }
     );
@@ -47,8 +47,17 @@ class App extends Component{
       items:filtedItems
     })
   }
-  handleEdit =(id) =>{
-    console.log(`handle edit ${id}`);
+  handleEdit = (id,title) =>{
+    const filtedItem = this.state.items.filter(
+      item=> item.id !== id);
+    const selectedItem = this.state.items.filter(
+      item=> item.id === id);
+    this.setState({
+      items: filtedItem,
+      item: selectedItem[0].title, //{title:selectedItem.title||''}, //selectedItem.title||'',
+      id:id,
+      editItem:true
+    })
   }
     render(){
       return (
@@ -58,7 +67,7 @@ class App extends Component{
               <h3 className="text-capitalize text-center">
                 INPUT
               </h3>
-              <ItemInput item={this.state.item}
+              <ItemInput item={this.state.item ||''}
                 handleChange={this.handleChange}
                 handleSubmit={this.handleSubmit}
                 editItem={this.editItem}/>

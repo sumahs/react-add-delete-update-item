@@ -9,7 +9,7 @@ export default class ItemList extends Component{
                 <h3 className="text-capitalize text-center">Item List</h3>
                 {items.map((item, id) =>{
                     return(
-                        <Items key={id}
+                        <Items key={item.id}
                             title={item.title}
                             handleDelete={()=>handleDelete(item.id)}
                             handleEdit={()=>{handleEdit(item.id)}}
